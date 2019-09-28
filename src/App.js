@@ -1,26 +1,24 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import LoginForm from './LoginForm'
+import './App.scss'
+import { Box, Columns, Column } from './bulma'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+const handleLogin = data => {
+  console.log(data)
 }
 
-export default App;
+const App = () => {
+  return (
+    <div className="App">
+      <Columns>
+        <Column span={3}>
+          <Box>
+            <LoginForm onLogin={handleLogin}/>
+          </Box>
+        </Column>
+      </Columns>
+    </div>
+  )
+}
+
+export default App
